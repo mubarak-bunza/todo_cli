@@ -2,8 +2,8 @@ from model import *
 import json
 import os
 
-x=os.getcwd()
-FileDB = fr"{x}/todo.json"
+path=os.getcwd()
+FileDB = fr"{path}/todo.json"
 
 def init_db():
     try:
@@ -55,7 +55,6 @@ class Todos():
         self.obj = self.read_from_file()
         try:
             self.obj[task-1]["status"] = True
-            print(self.obj[task-1])
             
             self.write_to_file(self.obj)
         except Exception as e:
